@@ -7,10 +7,10 @@
   btnVerMais.addEventListener('click', () => {
     if (!fotosJaAdicionadas) {
       const novasFotos = [
-        '/assets/img/logo.png',
-        '/assets/img/logo.png',
-        '/assets/img/logo.png',
-        '/assets/img/logo.png'
+        'logo.png',
+        'logo.png',
+        'logo.png',
+        'logo.png'
       ];
 
       novasFotos.forEach(src => {
