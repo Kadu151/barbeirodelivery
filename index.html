@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbearia Estilo Fino</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vinhoEscuro: '#581845',
+            vinho: '#900c3f',
+            vermelhoSangue: '#c70039',
+            laranjaQueimado: '#ff5733',
+            amareloOuro: '#ffc30f'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-vinhoEscuro text-white font-sans min-h-screen flex flex-col">
+
+<header class="bg-vinho p-4 shadow-md">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <!-- Logo como imagem -->
+    <a href="/template/construcao.html" class="block w-40">
+<img src="/assets/img/tipografia diego.png" alt="Logo Barbearia Estilo Fino" class="w-100 md:w-120 h-auto object-contain" />
+    </a>
+
+    <!-- Navegação -->
+    <nav class="space-x-6">
+      <a href="/template/construcao.html" class="hover:text-amareloOuro transition">Serviços</a>
+      <a href="/template/construcao.html" class="hover:text-amareloOuro transition">Galeria</a>
+      <a href="/template/construcao.html" class="hover:text-amareloOuro transition">Contato</a>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Hero Section -->
+<section class="bg-vermelhoSangue text-center py-16 px-4">
+  <div class="max-w-4xl mx-auto -mt-6">
+    <!-- Logo circular -->
+    <div class="w-32 h-32 md:w-36 md:h-36 overflow-hidden rounded-full mx-auto mb-6">
+      <img src="/assets/img/logo.png" 
+           alt="Logo circular Barbearia" 
+           class="w-full h-full scale-150 object-cover" />
+    </div>
+
+   <h2 class="text-4xl sm:text-5xl font-bold mb-6 -mt-4">Estilo que transforma</h2>
+<p class="text-lg mb-8 -mt-2">Cortes, barba e atendimento de primeira para quem sabe o valor de estar sempre bem-apresentado.</p>
+    <a href="/template/construcao.html" class="bg-laranjaQueimado text-white px-6 py-3 rounded-full font-semibold hover:bg-amareloOuro transition">Agende seu horário</a>
+  </div>
+</section>
+
+<section id="servicos" class="max-w-6xl mx-auto py-16 px-4 text-center">
+  <h3 class="text-3xl font-bold mb-12">Nossos Serviços</h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+<div class="bg-vinho rounded-2xl p-6 shadow-lg hover:shadow-xl transition cursor-default">
+      <div class="text-5xl mb-4">💈</div>
+      <h4 class="text-xl font-semibold mb-2">Corte Masculino</h4>
+      <p class="text-sm text-gray-200">Cortes modernos, clássicos e personalizados para realçar seu estilo.</p>
+    </div>
+
+    <!-- Card 2 -->
+<div class="bg-vinho rounded-2xl p-6 shadow-lg hover:shadow-xl transition cursor-default">
+      <div class="text-5xl mb-4">🪒</div>
+      <h4 class="text-xl font-semibold mb-2">Barba e Bigode</h4>
+      <p class="text-sm text-gray-200">Aparos, modelagens e cuidados para manter sua barba impecável.</p>
+    </div>
+
+    <!-- Card 3 -->
+<div class="bg-vinho rounded-2xl p-6 shadow-lg hover:shadow-xl transition cursor-default">
+      <div class="text-5xl mb-4">🧴</div>
+      <h4 class="text-xl font-semibold mb-2">Tratamentos</h4>
+      <p class="text-sm text-gray-200">Hidratação, cuidado da pele e produtos especiais para você se sentir renovado.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="galeria" class="max-w-6xl mx-auto py-16 px-4 text-center bg-vinhoEscuro rounded-lg">
+  <h3 class="text-3xl font-bold mb-12 text-amareloOuro">Galeria</h3>
+
+  <div id="gridFotos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300">
+      <img src="/assets/img/corte1.png" alt="Corte masculino moderno" class="w-full h-56 object-cover" />
+    </div>
+
+    <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300">
+      <img src="/assets/img/corte2.png" alt="Barba feita com precisão" class="w-full h-56 object-cover" />
+    </div>
+
+    <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300">
+      <img src="/assets/img/corte3.png" alt="Ambiente da barbearia" class="w-full h-56 object-cover" />
+    </div>
+
+    <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300">
+      <img src="/assets/img/corte4.png" alt="Corte estiloso" class="w-full h-56 object-cover" />
+    </div>
+  </div>
+
+<!-- Botão -->
+<button id="btnVerMais" class="mt-8 px-6 py-3 bg-laranjaQueimado text-white rounded-full hover:bg-amareloOuro transition font-semibold">
+  Ver mais fotos
+</button>
+
+<!-- Galeria (inicialmente oculta) -->
+<div id="fotosExtras" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 hidden"></div>
+</section>
+
+<!-- seção de agendamento-->
+<section id="agendamento" class="max-w-7xl mx-auto py-16 px-4 text-center">
+  <div class="max-w-7xl mx-auto px-4">
+    <div
+      class="bg-vinho p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 text-white"
+    >
+<!-- Texto à esquerda (agendamento + redes sociais) -->
+<div class="flex-1 flex flex-col items-center text-center -mt-10"> <!-- MOVIDO PARA CIMA -->
+  <!-- Logo da marca centralizada -->
+ <div class="flex flex-col items-center gap-4">
+  <img src="/assets/img/logotipo.png" alt="Logo" class="h-33 w-auto rounded-2xl mt-4" />
+</div>
+
+
+  <h3 class="text-2xl font-bold mb-4 text-amareloOuro">Agende seu horário</h3>
+  <p class="text-base text-gray-200 max-w-md">
+    Escolha o melhor dia e horário para ser atendido por um de nossos barbeiros. Atendimento com hora marcada e pontualidade.
+  </p>
+
+  <!-- Ícone WhatsApp -->
+  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer"
+     class="inline-flex items-center mt-6 px-5 py-3 bg-green-600 rounded-full hover:bg-green-700 transition text-white font-semibold shadow-lg"
+     aria-label="Fale conosco pelo WhatsApp">
+    <svg class="w-6 h-6 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M20.52 3.48a11.893 11.893 0 00-16.84 16.84l-1.5 5.49 5.63-1.47a11.893 11.893 0 0012.72-20.86zm-8.8 16.57a9.232 9.232 0 01-4.74-1.35l-.34-.21-3.15.82.84-3.07-.22-.33a9.224 9.224 0 1110.65 5.41 9.153 9.153 0 01-3.78.73zM16 14.41c-.22-.11-1.29-.63-1.49-.7s-.33-.11-.48.11-.55.7-.67.85-.25.17-.47.06a6.6 6.6 0 01-1.94-1.14 7.37 7.37 0 01-1.37-1.7c-.15-.26 0-.4.11-.52.11-.11.24-.29.36-.44a.83.83 0 00.11-.18.31.31 0 00-.04-.33c-.11-.22-.48-1.17-.66-1.6-.17-.42-.35-.36-.48-.37l-.41-.01a1.34 1.34 0 00-.99.47 4.22 4.22 0 00-1.23 2.93 8.64 8.64 0 004.18 4.89 8.44 8.44 0 003.02.95 3.66 3.66 0 001.5.13 3.39 3.39 0 002.04-1.49 3.19 3.19 0 00.22-1.46c-.03-.08-.14-.12-.33-.22z"
+      />
+    </svg>
+    Fale pelo WhatsApp
+  </a>
+
+  <!-- Redes sociais centralizadas -->
+  <div class="flex justify-center space-x-6 mt-6 text-2xl text-white">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/seuusuario" target="_blank" aria-label="Instagram" class="hover:text-amareloOuro transition">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-2.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+      </svg>
+    </a>
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/seuusuario" target="_blank" aria-label="Facebook" class="hover:text-amareloOuro transition">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073C2 17.09 5.656 21.205 10.438 22v-7.002H7.898v-2.925h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.876h2.773l-.443 2.925h-2.33V22C18.344 21.205 22 17.09 22 12.073z"/>
+      </svg>
+    </a>
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@seuusuario" target="_blank" aria-label="TikTok" class="hover:text-amareloOuro transition">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M12.17 2h2.667a5.43 5.43 0 004.206 4.084v2.567a7.993 7.993 0 01-3.518-.922v7.016c0 3.645-2.38 6.255-5.837 6.255-2.54 0-4.947-1.554-5.538-4.167a5.663 5.663 0 014.98-6.841v2.667a2.667 2.667 0 102.667 2.667V2z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Frase abaixo dos ícones -->
+  <h3 class="text-2xl font-bold mb-4 text-amareloOuro">Siga nas redes sociais</h3>
+</div>
+
+
+
+      <!-- Formulário à direita -->
+      <div class="flex-1 w-full">
+        <form class="bg-vinhoEscuro p-6 rounded-xl shadow-inner space-y-4" enctype="multipart/form-data">
+          <div>
+            <label for="nome" class="block text-sm font-semibold mb-1">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              class="w-full px-4 py-2 bg-vinho border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-laranjaQueimado"
+              placeholder="Seu nome"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-2 bg-vinho border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-laranjaQueimado"
+              placeholder="seu@email.com"
+            />
+          </div>
+
+          <div>
+            <label for="telefone" class="block text-sm font-semibold mb-1">telefone</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              required
+              class="w-full px-4 py-2 bg-vinho border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-laranjaQueimado"
+              placeholder="(xx) xxxxxxxxx"
+            />
+          </div>
+
+          <div>
+            <label for="data" class="block text-sm font-semibold mb-1">Data</label>
+            <input
+              type="date"
+              id="data"
+              name="data"
+              required
+              class="w-full px-4 py-2 bg-vinho border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-laranjaQueimado"
+            />
+          </div>
+
+          <div>
+            <label for="hora" class="block text-sm font-semibold mb-1">Horário</label>
+            <input
+              type="time"
+              id="hora"
+              name="hora"
+              required
+              class="w-full px-4 py-2 bg-vinho border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-laranjaQueimado"
+            />
+          </div>
+
+          <!-- Campo imagens de referência estilizado -->
+<div>
+  <label for="referencias" class="block text-sm font-semibold mb-1">Imagens de Referência</label>
+  <div class="relative w-full">
+    <input
+      type="file"
+      id="referencias"
+      name="referencias"
+      accept="image/*"
+      multiple
+      class="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
+    />
+    <div
+      class="w-full px-4 py-3 bg-vinho border border-gray-600 rounded-lg text-white placeholder-gray-400 flex items-center justify-between select-none"
+      tabindex="0"
+      role="button"
+      aria-label="Selecionar arquivos de imagem"
+      onclick="document.getElementById('referencias').click()"
+      onkeypress="if(event.key==='Enter' || event.key===' ') document.getElementById('referencias').click()"
+    >
+      <span>Nenhum arquivo selecionado</span>
+      <button
+        type="button"
+        class="ml-4 px-3 py-1 bg-laranjaQueimado rounded-full hover:bg-amareloOuro transition font-semibold text-white"
+      >
+        Escolher arquivos
+      </button>
+    </div>
+  </div>
+</div>
+
+
+          <button
+            type="submit"
+            class="w-full px-6 py-3 bg-laranjaQueimado text-white rounded-full hover:bg-amareloOuro transition font-semibold"
+          >
+            Confirmar Agendamento
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer Fixo no final -->
+  <footer class="bg-vinho p-4 text-center text-sm mt-auto">
+    <p>&copy; 2025 Barbearia Estilo Fino. Todos os direitos reservados.</p>
+  </footer>
+<script src="/add/index.js"></script> 
+</body>
